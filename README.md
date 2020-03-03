@@ -3,7 +3,7 @@
 Time-lagged t-SNE of molecular trajectories.
 
 Trajectory of molecular simulation is dimensionally reduced by t-distributed stochastic embedding (t-SNE)
-[[1][tsne]] and by a version of t-SNE that focuses on slow motions via analysis inspired by time-lagged
+[1][tsne] and by a version of t-SNE that focuses on slow motions via analysis inspired by time-lagged
 independent component analysis (TICA).
 
 The input is a trajectory in pdb, xtc, trr, dcd, netcdf or mdcrd (only atoms intended for analysis).
