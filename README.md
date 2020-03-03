@@ -1,3 +1,5 @@
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/spiwokv/tltsne.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/spiwokv/tltsne/alerts/)
+
 # tltsne
 
 Time-lagged t-SNE of molecular trajectories.
