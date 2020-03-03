@@ -90,4 +90,3 @@ pip3 install .
 6. https://www.scipy.org/
 
 7. https://scikit-learn.org/
-
