@@ -61,13 +61,11 @@ def dotltsne(infilename='', intopname='', nofit=0, lagtime=1, pcadim=2, ticadim=
     print("Lag time higher than the number of frames, exiting.")
     exit(0)
   pca = coor.pca(data = Xt)
-  pc = pca.eigenvectors
   projs_pca = pca.get_output()
 
   # TICA
   print("Runing TICA")
   tica = coor.tica(data = Xt, lag=lagtime, dim=ticadim)
-  ic = tica.eigenvectors
   projs_tica = tica.get_output()
 
   # t-SNE
