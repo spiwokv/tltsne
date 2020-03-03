@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
-libnames = [('mdtraj', 'md'), ('scipy', 'sp'), ('pyemma.coordinates', 'coor')
-            ('scipy.spatial', 'spat'), ('sklearn.manifold', 'sk'),
-            ('argparse', 'arg'), ('datetime', 'dt'), ('sys', 'sys')]
+libnames = [('mdtraj', 'md'), ('scipy', 'sp'), ('argparse', 'arg'), ('datetime', 'dt'), ('sys', 'sys')]
 
 for (name, short) in libnames:
   try:
@@ -13,14 +11,29 @@ for (name, short) in libnames:
   else:
     globals()[short] = lib
 
+try:
+  import sklearn.manifold as sk
+except:
+  print("Library sklearn.manifold is not installed, exiting")
+  exit(0)
+try:
+  import pyemma.coordinates as coor
+except:
+  print("Library pyemma.coordinates is not installed, exiting")
+  exit(0)
+try:
+  import scipy.spatial as spat
+except:
+  print("Library scipy.spatial is not installed, exiting")
+  exit(0)
+
 import tltsne
 
 # Parsing command line arguments
 parser = arg.ArgumentParser(description='Time-lagged t-SNE of simulation trajectories, requires scimpy, pyemma, sklearn and mdtraj')
 
 parser.add_argument('-i', dest='infile', default='traj.xtc',
-help='Input trajectory in pdb, xtc, trr, dcd, netcdf or mdcrd of atoms\n
-      to be analyzed. No jumps in PBC allowed.')
+help='Input trajectory in pdb, xtc, trr, dcd, netcdf or mdcrd of atoms to be analyzed. No jumps in PBC allowed.')
 
 parser.add_argument('-p', dest='intop', default='top.pdb',
 help='Input topology in pdb with atoms to be analyzed.')

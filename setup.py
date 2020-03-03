@@ -1,4 +1,5 @@
 import setuptools
+from os import path
 
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md')) as f:
@@ -12,7 +13,6 @@ setuptools.setup(name="tltsne",
                  long_description=long_description,
                  long_description_content_type="text/markdown",
                  url="https://github.com/spiwokv/tltsne",
-                 packages=setuptools.find_packages(),
                  classifiers=[
                      "Programming Language :: Python",
                      "License :: OSI Approved :: MIT License",
@@ -32,6 +32,6 @@ setuptools.setup(name="tltsne",
                      "codecov",
                  ],
                  include_package_data=True,
-                 zip_safe=False)
+                 zip_safe=False
 )
 

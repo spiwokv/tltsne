@@ -1,8 +1,6 @@
 name = "tltsne"
 
-libnames = [('mdtraj', 'md'), ('scipy', 'sp'), ('pyemma.coordinates', 'coor')
-            ('scipy.spatial', 'spat'), ('sklearn.manifold', 'sk'),
-            ('argparse', 'arg'), ('datetime', 'dt'), ('sys', 'sys')]
+libnames = [('mdtraj', 'md'), ('scipy', 'sp'), ('argparse', 'arg'), ('datetime', 'dt'), ('sys', 'sys')]
 
 for (name, short) in libnames:
   try:
@@ -12,6 +10,23 @@ for (name, short) in libnames:
     exit(0)
   else:
     globals()[short] = lib
+
+try:
+  import sklearn.manifold as sk
+except:
+  print("Library sklearn.manifold is not installed, exiting")
+  exit(0)
+try:
+  import pyemma.coordinates as coor
+except:
+  print("Library pyemma.coordinates is not installed, exiting")
+  exit(0)
+try:
+  import scipy.spatial as spat
+except:
+  print("Library scipy.spatial is not installed, exiting")
+  exit(0)
+
 
 def dotltsne(infilename='', intopname='', nofit=0, lagtime=1, pcadim=2, ticadim=2,
              maxpcs=50, ncomp=2, perplex1=10.0, perplex2=10.0, exag=12.0,
@@ -82,7 +97,6 @@ def dotltsne(infilename='', intopname='', nofit=0, lagtime=1, pcadim=2, ticadim=
 
   # Saving results
   ofile = open(ofilename, 'w')
-  for item in 
   ofile.write("# Command: %s\n" % command)
   if(nofit==0):
     ofile.write("# structures were superimposed onto reference structure\n")
@@ -107,7 +121,7 @@ def dotltsne(infilename='', intopname='', nofit=0, lagtime=1, pcadim=2, ticadim=
     ofile.write(" tltSNE%i" % (j+1))
   ofile.write("\n")
   for i in range(T):
-    output = " %i" % (i+1))
+    output = " %i" % (i+1)
     for j in range(pcadim):
       output = output + " %f" % projs_pca[i,j]
     for j in range(ticadim):
