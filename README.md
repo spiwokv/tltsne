@@ -72,9 +72,9 @@ pip3 install .
 
 1. L.J.P. van der Maaten, G.E. Hinton. [Visualizing High-Dimensional Data Using t-SNE.](https://lvdmaaten.github.io/publications/papers/JMLR_2008.pdf) J. Mach. Learn. Res. 2008, 9, 2579-2605.
 
-2. G. Perez-Hernandez, F. Paul, T. Giorgino, G. de Fabritiis, F. Noé: [Identification of slow molecular order parameters for Markov model construction.]() J. Chem. Phys. 2013, 139, 015102.
+2. G. Perez-Hernandez, F. Paul, T. Giorgino, G. de Fabritiis, F. Noé: [Identification of slow molecular order parameters for Markov model construction.](https://doi.org/10.1063/1.4811489) J. Chem. Phys. 2013, 139, 015102.
 
-3. C. R. Schwantes and V. S. Pande: [Improvements in Markov state model construction reveal many non-native interactions in the folding of NTL9.]() J. Chem. Theory Comput. 2013, 9, 2000-2009.
+3. C. R. Schwantes and V. S. Pande: [Improvements in Markov state model construction reveal many non-native interactions in the folding of NTL9.](https://doi.org/10.1021/ct300878a) J. Chem. Theory Comput. 2013, 9, 2000-2009.
 
 4. http://emma-project.org/
 
