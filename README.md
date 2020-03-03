@@ -1,6 +1,14 @@
 # tltsne
 
-Time-lagged t-SNE of molecular trajectories. 
+Time-lagged t-SNE of molecular trajectories.
+
+Trajectory of molecular simulation is dimensionally reduced by t-distributed stochastic embedding (t-SNE)
+and by a version of t-SNE that focuses on slow motions via analysis inspired by time-lagged independent
+component analysis (TICA).
+
+The input is a trajectory in pdb, xtc, trr, dcd, netcdf or mdcrd (only atoms intended for analysis).
+The second input file is a topology (pdb file with same atoms as in trajectory). Output contains
+frame ID, PCA, TICA, t-SNE and time-lagged t-SNE coordinates.
 
 ## Usage
 
@@ -38,6 +46,29 @@ optional arguments:
 ```
 
 ## Install
+
+Install via PIP:
+```
+pip3 install tltsne
+```
+(or with `sudo`).
+
+Install from GitHub:
+```
+git clone https://github.com/spiwokv/tltsne.git
+cd tltsne
+pip3 install .
+```
+(or with `sudo`).
+
+## Thanks
+
+* mdtraj
+* scipy
+* pyemma
+* sklearn
+* scikit-learn
+
 
 
 
