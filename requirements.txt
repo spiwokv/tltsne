@@ -1,6 +1,0 @@
-codecov==2.0.15
-coverage==4.5.2
-mdtraj==1.9.2
-numpy==1.15.4
-scipy==1.2.0
-
