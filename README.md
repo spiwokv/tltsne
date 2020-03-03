@@ -1,8 +1,15 @@
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/spiwokv/tltsne.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/spiwokv/tltsne/alerts/)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/spiwokv/tltsne.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/spiwokv/tltsne/alerts/) 
+[![PyPI](https://img.shields.io/pypi/v/anncolvar.svg)](https://pypi.org/project/anncolvar/)
 
 # tltsne
 
 Time-lagged t-SNE of molecular trajectories.
+
+## Authors
+
+Vojtech Spiwok and Pavel Kriz
+
+## Usage
 
 Trajectory of molecular simulation is dimensionally reduced by t-distributed stochastic embedding (t-SNE)
 [[1](#References)] and by a version of t-SNE that focuses on slow motions via analysis inspired by time-lagged
@@ -11,8 +18,6 @@ independent component analysis (TICA) [[2,3](#References)].
 The input is a trajectory in pdb, xtc, trr, dcd, netcdf or mdcrd (only atoms intended for analysis).
 The second input file is a topology (pdb file with same atoms as in trajectory). Output contains
 frame ID, PCA, TICA, t-SNE and time-lagged t-SNE coordinates.
-
-## Usage
 
 ```
 usage: tltsne [-h] [-i INFILE] [-p INTOP] [-o OUTFILE] [-nofit NOFIT]
