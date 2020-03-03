@@ -1,5 +1,5 @@
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/spiwokv/tltsne.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/spiwokv/tltsne/alerts/) 
 [![PyPI](https://img.shields.io/pypi/v/tltsne.svg)](https://pypi.org/project/anncolvar/)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/spiwokv/tltsne.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/spiwokv/tltsne/alerts/) 
 
 # tltsne
 
