@@ -13,17 +13,17 @@ for (name, short) in libnames:
 
 try:
   import sklearn.manifold as sk
-except:
+except ImportError:
   print("Library sklearn.manifold is not installed, exiting")
   exit(0)
 try:
   import pyemma.coordinates as coor
-except:
+except ImportError:
   print("Library pyemma.coordinates is not installed, exiting")
   exit(0)
 try:
   import scipy.spatial as spat
-except:
+except ImportError:
   print("Library scipy.spatial is not installed, exiting")
   exit(0)
 
