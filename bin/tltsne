@@ -1,0 +1,89 @@
+#!/usr/bin/env python
+
+libnames = [('mdtraj', 'md'), ('scipy', 'sp'), ('pyemma.coordinates', 'coor')
+            ('scipy.spatial', 'spat'), ('sklearn.manifold', 'sk'),
+            ('argparse', 'arg'), ('datetime', 'dt'), ('sys', 'sys')]
+
+for (name, short) in libnames:
+  try:
+    lib = __import__(name)
+  except ImportError:
+    print("Library %s cannot be loaded, exiting" % name)
+    exit(0)
+  else:
+    globals()[short] = lib
+
+import tltsne
+
+# Parsing command line arguments
+parser = arg.ArgumentParser(description='Time-lagged t-SNE of simulation trajectories, requires scimpy, pyemma, sklearn and mdtraj')
+
+parser.add_argument('-i', dest='infile', default='traj.xtc',
+help='Input trajectory in pdb, xtc, trr, dcd, netcdf or mdcrd of atoms\n
+      to be analyzed. No jumps in PBC allowed.')
+
+parser.add_argument('-p', dest='intop', default='top.pdb',
+help='Input topology in pdb with atoms to be analyzed.')
+
+parser.add_argument('-o', dest='outfile', default='out.txt',
+help='Output file.')
+
+parser.add_argument('-nofit', dest='nofit', default=0, type=int,
+help='Structure is NOT fit to reference topology if nofit is set to 1 (default 0).')
+
+parser.add_argument('-lagtime', dest='lagtime', default=1, type=int,
+help='Lag time in number of frames (default 1).')
+
+parser.add_argument('-pcadim', dest='pcadim', default=2, type=int,
+help='Number o PCA coordinates to be printed (defaut 2).')
+
+parser.add_argument('-ticadim', dest='ticadim', default=2, type=int,
+help='Number o TICA coordinates to be printed (defaut 2).')
+
+parser.add_argument('-maxpcs', dest='maxpcs', default=2, type=int,
+help='Number of TICA coordinates to be passed to t-SNE (default 50).')
+
+parser.add_argument('-ncomp', dest='ncomp', default=2, type=int,
+help='Number of t-SNE and time-lagged t-SNE coordinates to be printed (defaut 2).')
+
+parser.add_argument('-perplex1', dest='perplex1', default=10.0, type=float,
+help='Perplexity of t-SNE (default 10.0')
+
+parser.add_argument('-perplex2', dest='perplex2', default=10.0, type=float,
+help='Perplexity of time-lagged t-SNE (default 10.0')
+
+parser.add_argument('-rate', dest='rate', default=200.0, type=float,
+help='Learnning rate of t-SNE and time-lagged t-SNE (default 200.0).')
+
+parser.add_argument('-niter', dest='niter', default=1000, type=int,
+help='Number of iterations of t-SNE and time-lagged t-SNE (default 1000).')
+
+parser.add_argument('-exag', dest='exag', default=12.0, type=float,
+help='Early exaggeration of t-SNE and time-lagged t-SNE')
+
+args = parser.parse_args()
+
+command=''
+for item in sys.argv:
+  command = command + item + " "
+command = command[:-1]
+
+infilename = args.infile
+intopname = args.intop
+outtopname = args.outfile
+
+nofit = args.nofit
+lagtime = args.lagtime
+pcadim = args.pcadim
+ticadim = args.ticadim
+maxpcs = args.maxpcs
+ncomp = args.ncomp
+perplex1 = args.perplex1
+perplex2 = args.perplex2
+rate = args.rate
+niter = args.niter
+exag = args.exag
+
+tltsne.dotltsne(infilename, intopname, nofit, lagtime, pcadim, ticadim,
+                maxpcs, ncomp, perplex, exag, rate, niter, command, ofilename)
+
