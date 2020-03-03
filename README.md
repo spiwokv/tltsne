@@ -3,9 +3,8 @@
 Time-lagged t-SNE of molecular trajectories.
 
 Trajectory of molecular simulation is dimensionally reduced by t-distributed stochastic embedding (t-SNE)
-[1](#tsne)
-and by a version of t-SNE that focuses on slow motions via analysis inspired by time-lagged independent
-component analysis (TICA).
+[[1][tsne]] and by a version of t-SNE that focuses on slow motions via analysis inspired by time-lagged
+independent component analysis (TICA).
 
 The input is a trajectory in pdb, xtc, trr, dcd, netcdf or mdcrd (only atoms intended for analysis).
 The second input file is a topology (pdb file with same atoms as in trajectory). Output contains
@@ -72,7 +71,7 @@ pip3 install .
 
 ## References
 
-L.J.P. van der Maaten and G.E. Hinton. Visualizing High-Dimensional Data Using t-SNE. Journal of Machine Learning Research 9(Nov):2579-2605, 2008
+[tsne] L.J.P. van der Maaten and G.E. Hinton. Visualizing High-Dimensional Data Using t-SNE. Journal of Machine Learning Research 9(Nov):2579-2605, 2008
 
 
 
