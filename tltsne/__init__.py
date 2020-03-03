@@ -55,6 +55,7 @@ def dotltsne(infilename='', intopname='', nofit=0, lagtime=1, pcadim=2, ticadim=
       Xt[i,3*j+2] = X.xyz[i,j,2]
 
   # PCA
+  print("Runing PCA")
   T = X.n_frames
   if lagtime > T:
     print("Lag time higher than the number of frames, exiting.")
@@ -64,16 +65,19 @@ def dotltsne(infilename='', intopname='', nofit=0, lagtime=1, pcadim=2, ticadim=
   projs_pca = pca.get_output()
 
   # TICA
+  print("Runing TICA")
   tica = coor.tica(data = Xt, lag=lagtime, dim=ticadim)
   ic = tica.eigenvectors
   projs_tica = tica.get_output()
 
   # t-SNE
+  print("Runing t-SNE")
   Xembtsne = sk.TSNE(n_components=ncomp, perplexity=perplex1,
                      early_exaggeration=exag, learning_rate=rate, n_iter=niter,
                      metric="euclidean").fit_transform(Xt)
 
   # time-lagged t-SNE
+  print("Runing time-lagged t-SNE")
   Xm = Xt-sp.mean(Xt, axis=0)
   Xc = sp.cov(sp.transpose(Xm))
   eva, eve = sp.linalg.eig(Xc)
@@ -96,6 +100,7 @@ def dotltsne(infilename='', intopname='', nofit=0, lagtime=1, pcadim=2, ticadim=
                        metric="precomputed").fit_transform(Xd)
 
   # Saving results
+  print("Saving results")
   ofile = open(ofilename, 'w')
   ofile.write("# Command: %s\n" % command)
   if(nofit==0):
@@ -123,9 +128,9 @@ def dotltsne(infilename='', intopname='', nofit=0, lagtime=1, pcadim=2, ticadim=
   for i in range(T):
     output = " %i" % (i+1)
     for j in range(pcadim):
-      output = output + " %f" % projs_pca[i,j]
+      output = output + " %f" % projs_pca[0][i,j]
     for j in range(ticadim):
-      output = output + " %f" % projs_tica[i,j]
+      output = output + " %f" % projs_tica[0][i,j]
     for j in range(ncomp):
       output = output + " %f" % Xembtsne[i,j]
     for j in range(ncomp):

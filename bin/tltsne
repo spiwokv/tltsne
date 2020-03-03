@@ -53,7 +53,7 @@ help='Number o PCA coordinates to be printed (defaut 2).')
 parser.add_argument('-ticadim', dest='ticadim', default=2, type=int,
 help='Number o TICA coordinates to be printed (defaut 2).')
 
-parser.add_argument('-maxpcs', dest='maxpcs', default=2, type=int,
+parser.add_argument('-maxpcs', dest='maxpcs', default=50, type=int,
 help='Number of TICA coordinates to be passed to t-SNE (default 50).')
 
 parser.add_argument('-ncomp', dest='ncomp', default=2, type=int,
@@ -83,7 +83,7 @@ command = command[:-1]
 
 infilename = args.infile
 intopname = args.intop
-outtopname = args.outfile
+outfile = args.outfile
 
 nofit = args.nofit
 lagtime = args.lagtime
@@ -98,5 +98,5 @@ niter = args.niter
 exag = args.exag
 
 tltsne.dotltsne(infilename, intopname, nofit, lagtime, pcadim, ticadim,
-                maxpcs, ncomp, perplex, exag, rate, niter, command, ofilename)
+                maxpcs, ncomp, perplex1, perplex2, exag, rate, niter, command, outfile)
 
