@@ -91,7 +91,7 @@ def dotltsne(infilename='', intopname='', nofit=0, lagtime=1, pcadim=2, ticadim=
   eve2 = eve2[:,order]
   eva2 = eva2[order]
   projs = projs.dot(eve2[:,:maxpcs])
-  projs = projs*sp.real(eva2[:maxpcs])
+  projs = projs*sp.sqrt(sp.real(eva2[:maxpcs]))
   Xd = spat.distance_matrix(projs, projs)
   Xembtltsne = sk.TSNE(n_components=ncomp, perplexity=perplex2,
                        early_exaggeration=exag, learning_rate=rate, n_iter=niter,
