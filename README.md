@@ -43,13 +43,13 @@ optional arguments:
                       (default 50).
   -ncomp NCOMP        Number of t-SNE and time-lagged t-SNE coordinates to be
                       printed (defaut 2).
-  -perplex1 PERPLEX1  Perplexity of t-SNE (default 10.0
-  -perplex2 PERPLEX2  Perplexity of time-lagged t-SNE (default 10.0
+  -perplex1 PERPLEX1  Perplexity of t-SNE (default 10.0).
+  -perplex2 PERPLEX2  Perplexity of time-lagged t-SNE (default 10.0).
   -rate RATE          Learnning rate of t-SNE and time-lagged t-SNE (default
                       200.0).
   -niter NITER        Number of iterations of t-SNE and time-lagged t-SNE
                       (default 1000).
-  -exag EXAG          Early exaggeration of t-SNE and time-lagged t-SNE
+  -exag EXAG          Early exaggeration of t-SNE and time-lagged t-SNE.
 ```
 
 ## Install
