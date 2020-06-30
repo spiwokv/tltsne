@@ -1,5 +1,10 @@
 [![PyPI](https://img.shields.io/pypi/v/tltsne.svg)](https://pypi.org/project/anncolvar/)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/spiwokv/tltsne.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/spiwokv/tltsne/alerts/) 
+[![DOI:10.3389/fmolb.2020.00132](https://zenodo.org/badge/DOI/10.3389/fmolb.2020.00132.svg)](https://doi.org/10.3389/fmolb.2020.00132)
+
+Read more:
+
+V. Spiwok & P. Kříž: [Time-lagged t-distributed stochastic neighbor embedding (t-SNE) of molecular simulation trajectories](https://doi.org/10.3389/fmolb.2020.00132). *Frontiers in Molecular Biosciences* **7**, 132 (2020).
 
 # tltsne
 
